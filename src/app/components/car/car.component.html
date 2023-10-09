@@ -1,0 +1,28 @@
+<div *ngIf="dataLoaded == false" class="spinner-border text-info" role="status">
+  <span class="visually-hidden">Loading...</span>
+</div>
+<div class="row row-cols-1 row-cols-md-3 g-4">
+  <div class="col" *ngFor="let car of cars">
+    <div class="card">
+      <div class="show-details-icon" (click)="showDetails(car)">
+        <i class="fa fa-info-circle"></i>
+      </div>
+      <img
+        src="{{ car.imageUrl }}"
+        class="card-img-top"
+        alt="{{ car.modelName }}"
+      />
+      <div class="card-body">
+        <h5 class="card-title">{{ car.modelName }}</h5>
+        <p class="card-text" *ngIf="selectedCar === car">
+          <strong>Plate:</strong> {{ car.plate }} <br>
+          <strong>Daily Price:</strong> {{ car.dailyPrice }} <br>
+          <strong>Model Year:</strong> {{ car.modelYear }} <br>
+          <strong>State:</strong> {{ car.state }} <br>
+          <button class="btn btn-primary" 
+          (click)="rentCar(car)">Rent</button>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

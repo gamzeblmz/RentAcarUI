@@ -1,0 +1,29 @@
+<div class="modal-header">
+  <h4 class="modal-title">{{car.modelName}}</h4>
+  <div class="close-icon" (click)="modal.close()">
+    <i class="fa fa-times"></i>
+  </div>
+</div>
+<div class="modal-body">
+    <img
+    src="{{ car.imageUrl }}"
+    class="card-img-top"
+    alt="{{ car.modelName }}"
+  />
+  <p class="card-text">
+    <strong>Plate:</strong> {{ car.plate }} <br>
+    <strong>Daily Price:</strong> {{ car.dailyPrice }} <br>
+    <strong>Model Year:</strong> {{ car.modelYear }} <br>
+  </p>
+  <form [formGroup]="rentalForm">
+    <div class="form-group">
+      <div class="input-group">
+        <label for="rentalDays" class="input-group-text">Rented For Days:</label>
+        <input type="number" id="rentalDays" class="form-control" formControlName="rentalDays" min="1">
+      </div>
+    </div>
+  </form>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-primary">Rent Now</button>
+</div>
