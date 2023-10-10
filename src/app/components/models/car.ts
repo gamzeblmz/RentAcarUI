@@ -1,3 +1,4 @@
+import { Brand } from './brand';
 export interface Car{
      plate:String;
      dailyPrice:number;
@@ -5,4 +6,5 @@ export interface Car{
      state:number;
      modelName:String;
      imageUrl:String;
+     brandId:String;
 }
