@@ -2,7 +2,7 @@ import { Car } from './../../models/car';
 import { Model } from './../../models/model';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, map } from 'rxjs';
+import { Observable, catchError, map, tap } from 'rxjs';
 import { CarAbstractService } from '../abstracts/car-abstract.service';
 
 @Injectable({
@@ -18,14 +18,19 @@ export class CarMockService implements CarAbstractService {
     );
   }
 
-  getCarsByBrand(id: number): Observable<Car[]> {
-    //let newPath = `${this.apiUrl}+'/_expand=model&_expand=brand/brandId/'+id';
-    let newPath = this.apiUrl + '/_expand=model&_expand=brand/brandId/'+id;
-    return this.httpClient
-      .get<Car[]>(newPath)
-      .pipe(map((response: any) => [response]));
+  getCarsByBrand(brandId: number): Observable<Car[]> {
+    return this.httpClient.get<Car[]>(this.apiUrl+ '?_expand=model&_expand=brand/').pipe(
+      map(cars => 
+        cars.reduce((filteredCars, car) => {
+          if (car.model.brandId == brandId) {
+            filteredCars.push(car);
+          }
+          return filteredCars;
+        }, [])
+      )
+    );
   }
-
+  
   private getModelById(id: number): Observable<Model> {
     let newPath = 'http://localhost:3000/models/${id}';
     return this.httpClient.get<Model>(newPath);

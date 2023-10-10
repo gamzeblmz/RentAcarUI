@@ -70,7 +70,8 @@
             class="form-check-input"
             id="underMaintenance"
             formControlName="state"
-            [value]="'Under Maintenance'"
+            [value]="3"
+            (click)="setInitialState(3)"
           />
           <label class="form-check-label" for="underMaintenance"
             >Under Maintenance</label
@@ -82,7 +83,8 @@
             class="form-check-input"
             id="rented"
             formControlName="state"
-            [value]="'Rented'"
+            [value]="2"
+            (click)="setInitialState(2)"
           />
           <label class="form-check-label" for="rented">Rented</label>
         </div>
@@ -92,7 +94,8 @@
             class="form-check-input"
             id="available"
             formControlName="state"
-            [value]="'Available'"
+            [value]="1"
+            (click)="setInitialState(1)"
           />
           <label class="form-check-label" for="available">Available</label>
         </div>

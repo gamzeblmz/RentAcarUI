@@ -1,0 +1,46 @@
+.list-group {
+    list-style-type: none;
+    padding: 0;
+}
+
+/* .list-group-item {
+    cursor: pointer;
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    margin-bottom: 5px;
+    background-color: #f8f8f8; 
+}
+
+.list-group-item:hover {
+    background-color: #e0e0e0; 
+    color: blue;
+} */
+
+
+.list-group {
+    list-style-type: none;
+    padding: 0;
+}
+
+.list-group-item {
+    cursor: pointer;
+    padding: 10px 15px;
+    margin-bottom: 5px;
+    font-size: 16px;
+    color: #333;
+    border-bottom: 1px solid #ccc; /* Altı çizgili */
+    transition: background-color 0.3s; /* Düzgün geçişler için */
+}
+
+.list-group-item:hover {
+    background-color: #f0f0f0; /* Hover rengi */
+}
+
+.list-group-item.active {
+    background-color: #007bff; /* Tıklama rengi */
+    color: #fff;
+    border-color: #007bff;
+}
+
+
+
