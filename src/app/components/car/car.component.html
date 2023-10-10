@@ -10,10 +10,10 @@
       <img
         src="{{ car.imageUrl }}"
         class="card-img-top"
-        alt="{{ car.modelName }}"
+        alt="{{ car.model.name }}"
       />
       <div class="card-body">
-        <h5 class="card-title">{{ car.modelName }}</h5>
+        <h5 class="card-title">{{ car.model.name }}</h5>
         <p class="card-text" *ngIf="selectedCar === car">
           <strong>Plate:</strong> {{ car.plate }} <br>
           <strong>Daily Price:</strong> {{ car.dailyPrice }} <br>

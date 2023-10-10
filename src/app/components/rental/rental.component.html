@@ -1,5 +1,5 @@
 <div class="modal-header">
-  <h4 class="modal-title">{{car.modelName}}</h4>
+  <h4 class="modal-title">{{car.model.name}}</h4>
   <div class="close-icon" (click)="modal.close()">
     <i class="fa fa-times"></i>
   </div>
@@ -8,7 +8,7 @@
     <img
     src="{{ car.imageUrl }}"
     class="card-img-top"
-    alt="{{ car.modelName }}"
+    alt="{{car.model.name }}"
   />
   <p class="card-text">
     <strong>Plate:</strong> {{ car.plate }} <br>

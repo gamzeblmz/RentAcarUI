@@ -5,6 +5,8 @@ import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { RentalComponent } from '../rental/rental.component';
+import { CarAbstractService } from '../services/abstracts/car-abstract.service';
+import { CarMockService } from '../services/concretes/car-mock.service';
 @Component({
   selector: 'app-car',
   templateUrl: './car.component.html',
@@ -16,7 +18,7 @@ export class CarComponent implements OnInit {
   selectedCar: Car;
   showDetailCar: Car;
   constructor(
-    private carService: CarService,
+    private carService: CarMockService,
     private activatedRoute: ActivatedRoute,
     private router: Router,
     private modalService: NgbModal
@@ -34,6 +36,8 @@ export class CarComponent implements OnInit {
 
   getCars() {
     this.carService.getCars().subscribe((response) => {
+    console.log("getall")
+    console.log(response)
       this.cars = response;
       this.dataLoaded = true;
     });
@@ -41,10 +45,13 @@ export class CarComponent implements OnInit {
 
   getCarsByBrand(id: number) {
     this.carService.getCarsByBrand(id).subscribe((response) => {
-      this.cars = response;
+      console.log("response")
+      console.log(response)
+      this.cars=response;
       this.dataLoaded = true;
     });
   }
+
   showDetails(car: Car) {
     if (this.selectedCar === car) {
       this.selectedCar = null;

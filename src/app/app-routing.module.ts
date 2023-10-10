@@ -9,6 +9,7 @@ const routes: Routes = [
   { path: '', pathMatch: 'full', component: CarComponent },
   { path: 'cars', component: CarComponent },
   { path: 'cars/brand/:id', component: CarComponent },
+  //{path:"cars/:id?_expand=model.brandId/:id",component:CarComponent},
   { path: 'rental/:plate', component: RentalComponent },
   { path: 'add-car', component: AddCarComponent }
 ];

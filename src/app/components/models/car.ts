@@ -1,10 +1,11 @@
-import { Brand } from './brand';
+import { Model } from "./model";
+
 export interface Car{
      plate:String;
      dailyPrice:number;
      modelYear:number;
      state:number;
-     modelName:String;
      imageUrl:String;
      brandId:String;
+     model:Model;
 }
