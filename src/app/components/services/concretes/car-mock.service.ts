@@ -20,19 +20,8 @@ export class CarMockService implements CarAbstractService {
 
   getCarsByBrand(brandId: number): Observable<Car[]> {
     return this.httpClient.get<Car[]>(this.apiUrl+ '?_expand=model&_expand=brand/').pipe(
-      map(cars => 
-        cars.reduce((filteredCars, car) => {
-          if (car.model.brandId == brandId) {
-            filteredCars.push(car);
-          }
-          return filteredCars;
-        }, [])
-      )
+      map(cars => cars.filter(car => car.model.brandId == brandId))
     );
   }
-  
-  private getModelById(id: number): Observable<Model> {
-    let newPath = 'http://localhost:3000/models/${id}';
-    return this.httpClient.get<Model>(newPath);
-  }
+
 }
