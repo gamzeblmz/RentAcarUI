@@ -17,7 +17,7 @@ export class CarMockService implements CarAbstractService {
   }
 
   getCarsByBrand(brandId: number): Observable<Car[]> {
-    const url = `${this.apiUrl}?model.brandId=${brandId}`;
+    let url = `${this.apiUrl}?model.brandId=${brandId}`;
     return this.httpClient.get<Car[]>(url);
   }
 

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { CarService } from '../services/concretes/car.service';
 import { Car } from '../models/car';
 import { ActivatedRoute } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
@@ -34,8 +33,6 @@ export class CarComponent implements OnInit {
 
   getCars() {
     this.carService.getCars().subscribe((response) => {
-    console.log("getall")
-    console.log(response)
       this.cars = response;
       this.dataLoaded = true;
     });
@@ -43,8 +40,6 @@ export class CarComponent implements OnInit {
 
   getCarsByBrand(id: number) {
     this.carService.getCarsByBrand(id).subscribe((response) => {
-      console.log("response")
-      console.log(response)
       this.cars=response;
       this.dataLoaded = true;
     });

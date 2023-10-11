@@ -7,22 +7,19 @@ import { BrandComponent } from './components/brand/BrandComponent';
 import { ModelComponent } from './components/brandModel/model.component';
 import { NaviComponent } from './components/navi/navi.component';
 import { HttpClientModule } from '@angular/common/http';
-import { CarComponent } from './components/car/car.component';
 import { RentalComponent } from './components/rental/rental.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ReactiveFormsModule,FormsModule } from '@angular/forms';
 import { AddCarComponent } from './components/add-car/add-car.component';
-import { CarMockService } from './components/services/concretes/car-mock.service';
-import { CarAbstractService } from './components/services/abstracts/car-abstract.service';
+import { CarModule } from './components/car/car.module';
 @NgModule({
   declarations: [
     AppComponent,
     BrandComponent,
     ModelComponent,
     NaviComponent,
-    CarComponent,
     RentalComponent,
-    AddCarComponent
+    AddCarComponent,
   ],
   imports: [
     BrowserModule,
@@ -30,12 +27,10 @@ import { CarAbstractService } from './components/services/abstracts/car-abstract
     HttpClientModule,
     NgbModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    CarModule
   ],
-  providers: [{
-    provide:CarAbstractService,
-    useClass:CarMockService
-  }],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
