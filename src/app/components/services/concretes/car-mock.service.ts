@@ -13,15 +13,12 @@ export class CarMockService implements CarAbstractService {
 
   constructor(private httpClient: HttpClient) {}
   getCars(): Observable<Car[]> {
-    return this.httpClient.get<Car[]>(
-      this.apiUrl + '?_expand=model&_expand=brand/'
-    );
+    return this.httpClient.get<Car[]>(this.apiUrl);
   }
 
   getCarsByBrand(brandId: number): Observable<Car[]> {
-    return this.httpClient.get<Car[]>(this.apiUrl+ '?_expand=model&_expand=brand/').pipe(
-      map(cars => cars.filter(car => car.model.brandId == brandId))
-    );
+    const url = `${this.apiUrl}?model.brandId=${brandId}`;
+    return this.httpClient.get<Car[]>(url);
   }
 
 }

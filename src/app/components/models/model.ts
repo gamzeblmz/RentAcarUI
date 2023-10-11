@@ -1,5 +1,7 @@
+import { Brand } from "./brand";
+
 export class Model {
     id: number;
     name: string;
-    brandId: number;
+    brand: Brand;
   }
