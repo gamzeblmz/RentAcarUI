@@ -2,11 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { CarService } from '../services/concretes/car.service';
 import { Car } from '../models/car';
 import { ActivatedRoute } from '@angular/router';
-import { Router } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { RentalComponent } from '../rental/rental.component';
 import { CarAbstractService } from '../services/abstracts/car-abstract.service';
-import { CarMockService } from '../services/concretes/car-mock.service';
+
 @Component({
   selector: 'app-car',
   templateUrl: './car.component.html',
@@ -18,9 +17,8 @@ export class CarComponent implements OnInit {
   selectedCar: Car;
   showDetailCar: Car;
   constructor(
-    private carService: CarMockService,
+    private carService: CarAbstractService,
     private activatedRoute: ActivatedRoute,
-    private router: Router,
     private modalService: NgbModal
   ) {}
 

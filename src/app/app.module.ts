@@ -12,6 +12,8 @@ import { RentalComponent } from './components/rental/rental.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ReactiveFormsModule,FormsModule } from '@angular/forms';
 import { AddCarComponent } from './components/add-car/add-car.component';
+import { CarMockService } from './components/services/concretes/car-mock.service';
+import { CarAbstractService } from './components/services/abstracts/car-abstract.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +32,10 @@ import { AddCarComponent } from './components/add-car/add-car.component';
     ReactiveFormsModule,
     FormsModule
   ],
-  providers: [],
+  providers: [{
+    provide:CarAbstractService,
+    useClass:CarMockService
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
