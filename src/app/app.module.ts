@@ -10,7 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ReactiveFormsModule,FormsModule } from '@angular/forms';
 
-import { CarModule } from './pages/car/car.module';
+import { CarModule } from './features/add-car/car.module';
 import { RentalComponent } from './pages/rental/rental.component';
 
 import { BrandModule } from './pages/brand/brand.module';
