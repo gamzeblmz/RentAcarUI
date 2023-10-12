@@ -1,1 +1,30 @@
-<p>model works!</p>
+<div class="mb-3">
+    <input type="text" [(ngModel)]="filterText" placeholder="Search Model Name">
+    <button class="btn btn-primary mt-2" (click)="saveModel()">Save</button>
+  </div>
+  
+<table class="table table-hover">
+    <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Name</th>
+          <th scope="col">Brand Name</th>
+          <th scope="col">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let model of models | filter: filterText ;let i = index ">
+          <th scope="row">{{ i + 1 }}</th>
+          <td>{{ model.name }}</td>
+          <td>{{ model.brand.name }}</td>
+          <td>
+            <button class="btn btn-danger me-2" (click)="deleteModel(model.id)">
+              <i class="fas fa-trash"></i> Delete
+            </button>
+            <button class="btn btn-primary" (click)="updateModel(model.id)">
+              <i class="fas fa-edit"></i> Update
+            </button>
+          </td>
+        </tr>
+      </tbody>
+</table>

@@ -9,7 +9,7 @@ import { ModelAbstractService } from '../../services/abstract/model-abstract.ser
 })
 export class ModelComponent implements OnInit {
   models: Model[] = [];
-
+  filterText: string;
   constructor(private modelService: ModelAbstractService) {}
 
   ngOnInit(): void {
@@ -21,4 +21,13 @@ export class ModelComponent implements OnInit {
       this.models = response;
     });
   }
+  deleteModel(modelId: number) {
+    // Burada modeli silme işlemini gerçekleştirin
+  }
+  updateModel(modelId: number) {
+    // Burada modeli güncelleme işlemini gerçekleştirin
+  }
+ saveModel(){
+
+ }
 }
