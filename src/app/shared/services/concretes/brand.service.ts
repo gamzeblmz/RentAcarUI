@@ -9,7 +9,7 @@ import { BrandAbstractService } from '../abstracts/brand-abstract.service';
 })
 export class BrandService implements BrandAbstractService   {
 
-   apiUrl = 'http://localhost:8080/api/brands';
+   private readonly apiUrl = 'http://localhost:8080/api/brands';
    constructor(private httpClient: HttpClient) {}
 
   getBrands(): Observable<Brand[]> {

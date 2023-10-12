@@ -7,6 +7,8 @@ import { CarService } from './services/concretes/car.service';
 import { BrandService } from './services/concretes/brand.service';
 import { BrandMockService } from './services/concretes/brand-mock.service';
 import { CarMockService } from './services/concretes/car-mock.service';
+import { ModelAbstractService } from './services/abstracts/model-abstract.service';
+import { ModelMockService } from './services/concretes/model-mock.service';
 
 
 @NgModule({
@@ -18,6 +20,7 @@ import { CarMockService } from './services/concretes/car-mock.service';
     BrandService,
     BrandMockService,
     CarMockService,
+    ModelMockService
   ],
 })
 export class SharedModule {}

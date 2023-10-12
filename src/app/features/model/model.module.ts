@@ -4,15 +4,15 @@ import { HttpClientModule } from '@angular/common/http';
 
 
 import { RouterModule } from '@angular/router';
-import { BrandMockService } from 'src/app/shared/services/concretes/brand-mock.service';
-import { BrandAbstractService } from 'src/app/shared/services/abstracts/brand-abstract.service';
-import { BrandComponent } from './brand.component';
+import { ModelComponent } from './model.component';
+import { ModelAbstractService } from 'src/app/shared/services/abstracts/model-abstract.service';
+import { ModelMockService } from 'src/app/shared/services/concretes/model-mock.service';
 @NgModule({
   declarations: [
-    BrandComponent
+    ModelComponent
   ],
   exports: [
-    BrandComponent
+    ModelComponent
   ],
   imports: [
     CommonModule,
@@ -21,9 +21,9 @@ import { BrandComponent } from './brand.component';
   ],
   providers: [
     {
-      provide: BrandAbstractService,
-      useClass: BrandMockService,
+      provide: ModelAbstractService,
+      useClass: ModelMockService,
     } // IoC Container'a müdahale etmiş oluyoruz.
   ]
 })
-export class BrandModule { }
+export class ModelModule { }

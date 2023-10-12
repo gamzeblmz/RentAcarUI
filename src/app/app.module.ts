@@ -11,16 +11,15 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ReactiveFormsModule,FormsModule } from '@angular/forms';
 
 import { CarModule } from './pages/car/car.module';
-import { ModelComponent } from './pages/model/model.component';
 import { RentalComponent } from './pages/rental/rental.component';
 
 import { BrandModule } from './pages/brand/brand.module';
 import { SharedModule } from './shared/shared.module';
 import { AddCarComponent } from './features/add-car/add-car.component';
+import { ModelModule } from './features/model/model.module';
 @NgModule({
   declarations: [
     AppComponent,
-    ModelComponent,
     RentalComponent,
     AddCarComponent,
   ],
@@ -33,7 +32,8 @@ import { AddCarComponent } from './features/add-car/add-car.component';
     FormsModule,
     CarModule,
     BrandModule,
-    SharedModule
+    SharedModule,
+    ModelModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

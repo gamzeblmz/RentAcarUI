@@ -10,7 +10,7 @@ import { BrandAbstractService } from '../abstracts/brand-abstract.service';
 })
 export class BrandMockService implements BrandAbstractService {
 
-  apiUrl = 'http://localhost:3000/brands';
+  private readonly apiUrl = 'http://localhost:3000/brands';
   constructor(private httpClient: HttpClient) { }
 
   getBrands(): Observable<Brand[]> {
