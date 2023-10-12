@@ -13,9 +13,10 @@ import { ReactiveFormsModule,FormsModule } from '@angular/forms';
 import { CarModule } from './pages/car/car.module';
 import { ModelComponent } from './pages/model/model.component';
 import { RentalComponent } from './pages/rental/rental.component';
-import { AddCarComponent } from './pages/add-car/add-car.component';
+
 import { BrandModule } from './pages/brand/brand.module';
 import { SharedModule } from './shared/shared.module';
+import { AddCarComponent } from './features/add-car/add-car.component';
 @NgModule({
   declarations: [
     AppComponent,

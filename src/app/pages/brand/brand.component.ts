@@ -20,7 +20,6 @@ export class BrandComponent implements OnInit {
   }
 
   getBrands() {
-    console.log("geldi")
     this.brandService.getBrands().subscribe((response) => {
       this.brands = response;
       this.dataLoaded = true;
