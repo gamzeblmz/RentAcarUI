@@ -5,7 +5,7 @@ import { RouterModule } from '@angular/router';
 import { FilterPipe } from './pipes/filter.pipe';
 import { BrandService } from './services/concretes/brand.service';
 import { BrandMockService } from './services/concretes/brand-mock.service';
-import { ModelMockService } from './services/concretes/model-mock.service';
+import { ModelMockService } from '../features/modelProcess/services/concretes/model-mock.service';
 import { CarService } from '../features/carProcess/services/concretes/car.service';
 import { CarMockService } from '../features/carProcess/services/concretes/car-mock.service';
 

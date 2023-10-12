@@ -15,7 +15,7 @@ import { BrandModule } from './pages/brand/brand.module';
 import { SharedModule } from './shared/shared.module';
 import { AddCarComponent } from './features/carProcess/components/add-car/add-car.component';
 import { CarModule } from './features/carProcess/car.module';
-import { ModelModule } from './features/modelProcess/components/model/model.module';
+import { ModelModule } from './features/modelProcess/model.module';
 
 @NgModule({
   declarations: [

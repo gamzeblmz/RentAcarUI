@@ -1,15 +1,19 @@
 .col-md-12 {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 img {
-    max-width: 50%;
+  max-width: 50%;
 }
 .icon-text {
-    display: none;
-  }
-  
-  .btn:hover .icon-text {
-    display: inline;
-  }
-  
+  display: none;
+}
+
+.btn:hover .icon-text {
+  display: inline;
+}
+.col-md-2.addBrand {
+  display: flex;
+  /* justify-content: space-around; */
+  align-items: flex-end;
+}

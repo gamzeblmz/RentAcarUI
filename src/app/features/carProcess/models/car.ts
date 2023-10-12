@@ -1,4 +1,4 @@
-import { Model } from "../../../shared/models/model";
+import { Model } from "../../modelProcess/models/model";
 
 export interface Car{
      plate:String;

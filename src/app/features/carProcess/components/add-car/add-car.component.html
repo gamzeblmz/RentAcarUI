@@ -21,29 +21,22 @@
           formControlName="imageUrl"
         />
       </div>
-      <div class="col-md-6">
+      <div class="col-md-4">
         <label for="brand" class="form-label">Brand Name</label>
         <select class="form-select" aria-label="Default select example" id="selectedBrand" formControlName="selectedBrand" (change)="onBrandSelect()">
           <option value="" selected>Open this select Brand</option>
           <option *ngFor="let brand of brands" [ngValue]="brand">{{brand.name}}</option>
         </select>
-        <div class="input-group-append">
-          <button class="btn btn-outline-secondary" type="button" >
-            <i class="fas fa-plus"></i>
-            <span class="icon-text">Add Brand</span>
-          </button>
-        </div>
+      </div>
+      <div class="col-md-2 addBrand">
+        <button class="btn btn-outline-secondary" type="button" >
+          <i class="fas fa-plus"></i>
+          <span class="icon-text">Add Brand</span>
+        </button>
       </div>
     </div>
      <!-- MODEL AND MODEL YEAR -->
     <div class="row mb-3">
-      <div class="col-md-6">
-        <label for="modelName" class="form-label">Model Name</label>
-        <select class="form-select" aria-label="Default select example" id="selectedModel" formControlName="selectedModel">
-          <option selected>Open this select Model</option>
-          <option *ngFor="let model of models" [ngValue]="model">{{model.name}}</option>
-        </select>
-      </div>
       <div class="col-md-6">
         <label for="modelYear" class="form-label">Model Year</label>
         <input
@@ -52,6 +45,19 @@
           class="form-control"
           formControlName="modelYear"
         />
+      </div>
+      <div class="col-md-4">
+        <label for="modelName" class="form-label">Model Name</label>
+        <select class="form-select" aria-label="Default select example" id="selectedModel" formControlName="selectedModel">
+          <option selected>Open this select Model</option>
+          <option *ngFor="let model of models" [ngValue]="model">{{model.name}}</option>
+        </select>
+      </div>
+      <div class="col-md-2 addBrand">
+        <button class="btn btn-outline-secondary" type="button" (click)="goToModelComponent()" >
+          <i class="fas fa-plus"></i>
+          <span class="icon-text">Add Model</span>
+        </button>
       </div>
     </div>
     <!-- PLATE AND DAİLY PRİCE  -->

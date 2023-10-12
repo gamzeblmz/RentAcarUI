@@ -4,9 +4,9 @@ import { HttpClientModule } from '@angular/common/http';
 
 
 import { RouterModule } from '@angular/router';
-import { ModelComponent } from './model.component';
-import { ModelAbstractService } from 'src/app/shared/services/abstracts/model-abstract.service';
-import { ModelMockService } from 'src/app/shared/services/concretes/model-mock.service';
+import { ModelComponent } from './components/model/model.component';
+import { ModelAbstractService } from 'src/app/features/modelProcess/services/abstract/model-abstract.service';
+import { ModelMockService } from 'src/app/features/modelProcess/services/concretes/model-mock.service';
 @NgModule({
   declarations: [
     ModelComponent
