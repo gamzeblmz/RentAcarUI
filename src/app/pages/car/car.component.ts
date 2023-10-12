@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { Car } from '../models/car';
 import { ActivatedRoute } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { RentalComponent } from '../rental/rental.component';
-import { CarAbstractService } from '../services/abstracts/car-abstract.service';
+import { Car } from 'src/app/shared/models/car';
+import { CarAbstractService } from 'src/app/shared/services/abstracts/car-abstract.service';
+
 
 @Component({
   selector: 'app-car',
@@ -15,6 +16,8 @@ export class CarComponent implements OnInit {
   dataLoaded = false;
   selectedCar: Car;
   showDetailCar: Car;
+  filterText: string = '';
+  filteredCount = { count: 0 };
   constructor(
     private carService: CarAbstractService,
     private activatedRoute: ActivatedRoute,

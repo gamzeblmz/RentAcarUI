@@ -1,8 +1,8 @@
-import { Brand } from './../models/brand';
+
 import { Component, OnInit } from '@angular/core';
-import { BrandService } from '../services/concretes/brand.service';
-import { BrandAbstractService } from '../services/abstracts/brand-abstract.service';
-import { BrandMockService } from '../services/concretes/brand-mock.service';
+import { Brand } from 'src/app/shared/models/brand';
+import { BrandAbstractService } from 'src/app/shared/services/abstracts/brand-abstract.service';
+
 
 @Component({
   selector: 'app-brand',
@@ -13,14 +13,16 @@ export class BrandComponent implements OnInit {
   brands: Brand[] = [];
   currentBrand: Brand;
   dataLoaded = false;
-  constructor(private brandService: BrandMockService) { }
+  constructor(private brandService: BrandAbstractService) { }
 
   ngOnInit(): void {
     this.getBrands();
   }
 
   getBrands() {
+    console.log("geldi")
     this.brandService.getBrands().subscribe((response) => {
+        console.log(response)
       this.brands = response;
       this.dataLoaded = true;
     });
