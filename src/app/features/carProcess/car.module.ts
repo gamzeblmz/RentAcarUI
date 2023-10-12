@@ -1,18 +1,19 @@
+
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
-import { CarComponent } from '../../pages/car/car.component';
-import { CarAbstractService } from 'src/app/shared/services/abstracts/car-abstract.service';
-import { CarMockService } from 'src/app/shared/services/concretes/car-mock.service';
-
-
+import { RouterModule } from '@angular/router';
+import { CarComponent } from 'src/app/pages/car/car.component';
+import { CarAbstractService } from './services/abstract/car-abstract.service';
+import { CarMockService } from './services/concretes/car-mock.service';
 
 @NgModule({
   declarations: [
     CarComponent
   ],
   exports: [
-    CarComponent
+    CarComponent,
+    RouterModule
   ],
   imports: [
     CommonModule,

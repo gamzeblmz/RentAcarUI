@@ -7,5 +7,5 @@ import { Observable } from 'rxjs';
 })
 export abstract class ModelAbstractService {
   abstract getModels() : Observable<Model[]>;
-  abstract getModelByBrand(brandId: number):Observable<Model[]>;
+  abstract getModelsByBrand(brandId: number):Observable<Model[]>;
 }

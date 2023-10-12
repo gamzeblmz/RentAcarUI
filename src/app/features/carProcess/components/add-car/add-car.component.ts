@@ -14,10 +14,11 @@ export class AddCarComponent implements OnInit  {
   brands: Brand[] = [];
   selectedBrand: Brand;
   models: Model[] = [];
+  selectedModel:Model;
   constructor(
     private fb: FormBuilder,
     private brandService: BrandAbstractService,
-    private modelAbstractService:ModelAbstractService
+    private modelService:ModelAbstractService
   ) {}
 
   ngOnInit(): void {
@@ -32,8 +33,10 @@ export class AddCarComponent implements OnInit  {
       dailyPrice: [null, Validators.required],
       modelYear: [null, Validators.required],
       state: [null],
-      modelName: ['', Validators.required],
-      imageUrl: ['', Validators.required]
+      selectedModel: ['', Validators.required],
+      imageUrl: ['', Validators.required],
+      selectedBrand: [''],
+
     });
   }
 
@@ -54,20 +57,24 @@ export class AddCarComponent implements OnInit  {
       this.brands = response;
     });
   }
-  selectBrand(){
-    console.log(this.selectBrand)
+  onBrandSelect(){
+    const selectedBrand = this.carForm.get('selectedBrand').value;
+  if (selectedBrand) {
+    const brandId = selectedBrand.id;
+    this.modelService.getModelsByBrand(brandId).subscribe(models => {
+      this.models = models;
+    });
+  } else {
+    this.getModels() // Marka seçimi yapılmamışsa bütün modelleri göster
+  }
 
   }
 
   getModels(){
-    this.modelAbstractService.getModels().subscribe((response) => {
+    this.modelService.getModels().subscribe((response) => {
       this.models = response;
       console.log(response)
     });
   }
-  selectModel(){
-    console.log("brand")
-    console.log(this.selectBrand)
-  }
-  
+
 }

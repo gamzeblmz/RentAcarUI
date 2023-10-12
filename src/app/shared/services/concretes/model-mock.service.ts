@@ -5,17 +5,16 @@ import { Model } from '../../models/model';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
-export class ModelMockService implements ModelAbstractService{
-
+export class ModelMockService implements ModelAbstractService {
   private readonly apiUrl = 'http://localhost:3000/models';
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient) {}
 
-   getModels(): Observable<Model[]> {
+  getModels(): Observable<Model[]> {
     return this.httpClient.get<Model[]>(this.apiUrl);
   }
-   getModelByBrand(brandId: number): Observable<Model[]> {
+  getModelsByBrand(brandId: number): Observable<Model[]> {
     return this.httpClient.get<Model[]>(`${this.apiUrl}?brand.id=${brandId}`);
   }
 }

@@ -1,9 +1,8 @@
-import { Car } from './../../models/car';
-import { Model } from './../../models/model';
+import { Car } from '../../models/car';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, catchError, map, tap } from 'rxjs';
-import { CarAbstractService } from '../abstracts/car-abstract.service';
+import { CarAbstractService } from '../abstract/car-abstract.service';
 
 @Injectable({
   providedIn: 'root',

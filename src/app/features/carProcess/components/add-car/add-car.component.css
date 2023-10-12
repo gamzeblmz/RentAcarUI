@@ -1,0 +1,15 @@
+.col-md-12 {
+    display: flex;
+    justify-content: center;
+}
+img {
+    max-width: 50%;
+}
+.icon-text {
+    display: none;
+  }
+  
+  .btn:hover .icon-text {
+    display: inline;
+  }
+  

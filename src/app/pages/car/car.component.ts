@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { RentalComponent } from '../rental/rental.component';
-import { Car } from 'src/app/shared/models/car';
-import { CarAbstractService } from 'src/app/shared/services/abstracts/car-abstract.service';
+import { Car } from 'src/app/features/carProcess/models/car';
+import { CarAbstractService } from 'src/app/features/carProcess/services/abstract/car-abstract.service';
 
 
 @Component({

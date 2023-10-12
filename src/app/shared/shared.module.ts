@@ -3,13 +3,11 @@ import { CommonModule } from '@angular/common';
 import { NaviComponent } from './components/navi/navi.component';
 import { RouterModule } from '@angular/router';
 import { FilterPipe } from './pipes/filter.pipe';
-import { CarService } from './services/concretes/car.service';
 import { BrandService } from './services/concretes/brand.service';
 import { BrandMockService } from './services/concretes/brand-mock.service';
-import { CarMockService } from './services/concretes/car-mock.service';
-import { ModelAbstractService } from './services/abstracts/model-abstract.service';
 import { ModelMockService } from './services/concretes/model-mock.service';
-
+import { CarService } from '../features/carProcess/services/concretes/car.service';
+import { CarMockService } from '../features/carProcess/services/concretes/car-mock.service';
 
 @NgModule({
   declarations: [NaviComponent, FilterPipe],
@@ -20,7 +18,7 @@ import { ModelMockService } from './services/concretes/model-mock.service';
     BrandService,
     BrandMockService,
     CarMockService,
-    ModelMockService
+    ModelMockService,
   ],
 })
 export class SharedModule {}

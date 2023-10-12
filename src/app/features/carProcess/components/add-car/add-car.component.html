@@ -1,5 +1,6 @@
 <div>
   <form [formGroup]="carForm" (ngSubmit)="submitForm()">
+    <!-- car photo -->
     <div class="row mb-3">
       <div class="col-md-12">
         <img
@@ -9,6 +10,7 @@
         />
       </div>
     </div>
+     <!-- Image URL and BRAND -->
     <div class="row mb-3">
       <div class="col-md-6">
         <label for="imageUrl" class="form-label">Image URL</label>
@@ -21,17 +23,23 @@
       </div>
       <div class="col-md-6">
         <label for="brand" class="form-label">Brand Name</label>
-        <select class="form-select" aria-label="Default select example" [(ngModel)]="selectedBrand" name="selectedBrand">
-          <option selected>Open this select Brand</option>
+        <select class="form-select" aria-label="Default select example" id="selectedBrand" formControlName="selectedBrand" (change)="onBrandSelect()">
+          <option value="" selected>Open this select Brand</option>
           <option *ngFor="let brand of brands" [ngValue]="brand">{{brand.name}}</option>
         </select>
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary" type="button" >
+            <i class="fas fa-plus"></i>
+            <span class="icon-text">Add Brand</span>
+          </button>
+        </div>
       </div>
     </div>
-    
+     <!-- MODEL AND MODEL YEAR -->
     <div class="row mb-3">
       <div class="col-md-6">
         <label for="modelName" class="form-label">Model Name</label>
-        <select class="form-select" aria-label="Default select example" [(ngModel)]="selectedBrand" name="selectedBrand">
+        <select class="form-select" aria-label="Default select example" id="selectedModel" formControlName="selectedModel">
           <option selected>Open this select Model</option>
           <option *ngFor="let model of models" [ngValue]="model">{{model.name}}</option>
         </select>
@@ -46,6 +54,7 @@
         />
       </div>
     </div>
+    <!-- PLATE AND DAİLY PRİCE  -->
     <div class="row mb-3">
       <div class="col-md-6">
         <label for="plate" class="form-label">Plate</label>
@@ -66,6 +75,7 @@
         />
       </div>
     </div>
+    <!-- STATE -->
     <div class="row mb-3">
       <div class="col-md-6">
         <label class="form-label">State</label>
