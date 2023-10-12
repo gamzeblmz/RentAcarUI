@@ -22,7 +22,6 @@ export class BrandComponent implements OnInit {
   getBrands() {
     console.log("geldi")
     this.brandService.getBrands().subscribe((response) => {
-        console.log(response)
       this.brands = response;
       this.dataLoaded = true;
     });
@@ -40,7 +39,6 @@ export class BrandComponent implements OnInit {
   }
 
   getAllBrandClass() {
-    console.log()
     if (!this.currentBrand) {
       return 'list-group-item active';
     } else {

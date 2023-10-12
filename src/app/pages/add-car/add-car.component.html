@@ -10,14 +10,21 @@
       </div>
     </div>
     <div class="row mb-3">
-      <label for="imageUrl" class="form-label">Image URL</label>
-      <div class="col-md-12">
+      <div class="col-md-6">
+        <label for="imageUrl" class="form-label">Image URL</label>
         <input
           type="text"
           id="imageUrl"
           class="form-control"
           formControlName="imageUrl"
         />
+      </div>
+      <div class="col-md-6">
+        <label for="brand" class="form-label">Brand Name</label>
+        <select class="form-select" aria-label="Default select example" [(ngModel)]="selectedBrand" name="selectedBrand">
+          <option selected>Open this select Brand</option>
+          <option *ngFor="let brand of brands" [ngValue]="brand">{{brand.name}}</option>
+        </select>
       </div>
     </div>
     <div class="row mb-3">

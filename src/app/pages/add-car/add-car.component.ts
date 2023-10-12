@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Brand } from 'src/app/shared/models/brand';
+import { BrandAbstractService } from 'src/app/shared/services/abstracts/brand-abstract.service';
 @Component({
   selector: 'app-add-car',
   templateUrl: './add-car.component.html',
@@ -7,12 +9,16 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class AddCarComponent implements OnInit  {
   carForm: FormGroup;
+  brands: Brand[] = [];
+  selectedBrand: Brand;
   constructor(
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private brandService: BrandAbstractService
   ) {}
 
   ngOnInit(): void {
     this.cretaedRentalForm();
+    this.getBrands();
   }
 
   cretaedRentalForm(){
@@ -27,6 +33,7 @@ export class AddCarComponent implements OnInit  {
   }
 
   submitForm() {
+    console.log("this.carForm.value")
     console.log(this.carForm.value)
     if (this.carForm.valid) {
      
@@ -36,6 +43,15 @@ export class AddCarComponent implements OnInit  {
 
   setInitialState(stateValue: number) {
     this.carForm.get('state').setValue(stateValue);
+  }
+  getBrands(){
+    this.brandService.getBrands().subscribe((response) => {
+      this.brands = response;
+    });
+  }
+  selectBrand(){
+    console.log("brand")
+    console.log(this.selectBrand)
   }
   
 }
