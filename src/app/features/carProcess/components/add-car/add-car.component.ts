@@ -24,12 +24,12 @@ export class AddCarComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.cretaedRentalForm();
+    this.cretaedCarForm();
     this.getBrands();
     this.getModels();
   }
 
-  cretaedRentalForm() {
+  cretaedCarForm() {
     this.carForm = this.fb.group({
       plate: ['', Validators.required],
       dailyPrice: [null, Validators.required],

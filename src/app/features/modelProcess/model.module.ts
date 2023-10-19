@@ -7,6 +7,7 @@ import { ModelAbstractService } from 'src/app/features/modelProcess/services/abs
 import { ModelMockService } from 'src/app/features/modelProcess/services/concretes/model-mock.service';
 import { FilterPipe } from './pipes/filter-model.pipe';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     ModelComponent,
@@ -19,7 +20,8 @@ import { FormsModule } from '@angular/forms';
     CommonModule,
     HttpClientModule,
     RouterModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     {

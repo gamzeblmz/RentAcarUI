@@ -1,30 +1,58 @@
-<div class="mb-3">
-    <input type="text" [(ngModel)]="filterText" placeholder="Search Model Name">
-    <button class="btn btn-primary mt-2" (click)="saveModel()">Save</button>
-  </div>
-  
+<div>
+  <form [formGroup]="modelForm" (ngSubmit)="submitForm()">
+    <div class="row mb-3">
+      <div class="col-md-4">
+        <select
+          class="form-select"
+          aria-label="Default select example"
+          placeholder="Select Brand"
+          id="selectedBrand"
+          formControlName="selectedBrand"
+          (change)="onBrandSelect()"
+        >
+          <option value="" selected>Open this select Brand</option>
+          <option *ngFor="let brand of brands" [ngValue]="brand">
+            {{ brand.name }}
+          </option>
+        </select>
+      </div>
+      <div class="col-md-4">
+        <input
+          type="text"
+          placeholder="Search Model Name"
+          id="modelName"
+          class="form-control"
+          formControlName="modelName"
+        />
+      </div>
+      <div class="col-md-4 save">
+        <button type="submit" class="btn btn-primary mt-2">Save</button>
+      </div>
+    </div>
+  </form>
+</div>
 <table class="table table-hover">
-    <thead>
-        <tr>
-          <th scope="col">#</th>
-          <th scope="col">Name</th>
-          <th scope="col">Brand Name</th>
-          <th scope="col">Actions</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let model of models | filter: filterText ;let i = index ">
-          <th scope="row">{{ i + 1 }}</th>
-          <td>{{ model.name }}</td>
-          <td>{{ model.brand.name }}</td>
-          <td>
-            <button class="btn btn-danger me-2" (click)="deleteModel(model.id)">
-              <i class="fas fa-trash"></i> Delete
-            </button>
-            <button class="btn btn-primary" (click)="updateModel(model.id)">
-              <i class="fas fa-edit"></i> Update
-            </button>
-          </td>
-        </tr>
-      </tbody>
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Brand Name</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let model of models | filter : filterText; let i = index">
+      <th scope="row">{{ i + 1 }}</th>
+      <td>{{ model.name }}</td>
+      <td>{{ model.brand.name }}</td>
+      <td>
+        <button class="btn btn-danger me-2" (click)="deleteModel(model.id)">
+          <i class="fas fa-trash"></i> Delete
+        </button>
+        <button class="btn btn-primary" (click)="updateModel(model.id)">
+          <i class="fas fa-edit"></i> Update
+        </button>
+      </td>
+    </tr>
+  </tbody>
 </table>
